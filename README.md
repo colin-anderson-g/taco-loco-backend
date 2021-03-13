@@ -6,13 +6,19 @@ The following requests can be made to the URL http://localhost::8080/deliveries
 
 JSON inputs must be formatted as follows:
 {
+  
   "customerName": "Example Name",
+  
   "customerAddress": "Example Address"
+
 }
 
 A GET request will return all current deliveries as a JSON file with a customer name and address for each delivery.
+
 A POST request takes a JSON file containing a customer's name and address and adds a new delivery to the list wit that information.
+
 A PUT request takes a JSON file to update any delivery's with a matching name and/or address with the new information.
+
 A DELETE request takes a JSON file to delete any deliveries with a matching customer name and/or address.
 
 Delivery.java is the delivery class that creates new delivery objects to add, update, or alter in the DeliveryService.
