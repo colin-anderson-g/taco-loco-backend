@@ -23,16 +23,13 @@ public class DeliveryService {
         deliveries.add(delivery);
     }
 
-    //Check each delivery for matching customer name and update delivery information if found
+    //Check each delivery for matching customer name/address and update delivery information if found
     public void updateDelivery(Delivery delivery) {
         for (int i = 0; i < deliveries.size(); i++){
             Delivery d = deliveries.get(i);
             if(d.getCustomerAddress().equals(delivery.getCustomerAddress())){
                 deliveries.set(i, delivery);
             }
-        }
-        for (int i = 0; i < deliveries.size(); i++){
-            Delivery d = deliveries.get(i);
             if(d.getCustomerName().equals(delivery.getCustomerName())){
                 deliveries.set(i, delivery);
             }

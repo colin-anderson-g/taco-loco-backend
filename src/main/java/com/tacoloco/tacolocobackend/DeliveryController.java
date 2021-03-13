@@ -1,13 +1,11 @@
 package com.tacoloco.tacolocobackend;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class DeliveryController {
@@ -26,7 +24,7 @@ public class DeliveryController {
     }
 
     //PUT request to update delivery based on either customer name or address
-    //This request checks for a successful update using the customer's name and attempts to update based on address otherwise
+    //This request checks for a successful update using the customer's address and attempts to update based on name otherwise
     @RequestMapping(method = RequestMethod.PUT, value = "/deliveries")
     public void updateDelivery(@RequestBody Delivery delivery) {
         deliveryService.updateDelivery(delivery);
