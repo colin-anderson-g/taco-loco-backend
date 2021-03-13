@@ -23,29 +23,25 @@ public class DeliveryService {
         deliveries.add(delivery);
     }
 
-    //Check each delivery for matching customer name and update delivery information if found, return string indicating success or failure
-    public String updateDeliveryByName(Delivery delivery, String customerName) {
+    //Check each delivery for matching customer name and update delivery information if found
+    public void updateDelivery(Delivery delivery) {
         for (int i = 0; i < deliveries.size(); i++){
             Delivery d = deliveries.get(i);
-            if(d.getCustomerName().equals(customerName)){
+            if(d.getCustomerAddress().equals(delivery.getCustomerAddress())){
                 deliveries.set(i, delivery);
-                return "update success";
             }
         }
-        return "update failed";
-
+        for (int i = 0; i < deliveries.size(); i++){
+            Delivery d = deliveries.get(i);
+            if(d.getCustomerName().equals(delivery.getCustomerName())){
+                deliveries.set(i, delivery);
+            }
+        }
     }
 
-    //Check each delivery for matching customer address and update delivery if found
-    public void updateDeliveryByAddress(Delivery delivery, String customerAddress) {
-        for (int i = 0; i < deliveries.size(); i++){
-            Delivery d = deliveries.get(i);
-            if(d.getCustomerName().equals(customerAddress)){
-                deliveries.set(i, delivery);
-            }
-        }
-        
-
+    public void deleteDelivery(Delivery delivery) {
+        deliveries.removeIf(d -> d.getCustomerName().equals(delivery.getCustomerName()));
+        deliveries.removeIf(d -> d.getCustomerAddress().equals(delivery.getCustomerAddress()));
     }
 
 }
