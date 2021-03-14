@@ -5,9 +5,11 @@ Prerequisites:
 -Java 11
 
 Setup:
+```
 brew install mvn
 mvn install in root dir
 mvn spring-boot:run
+```
 
 This backend service can be started by running TacoLocoBackendApplication.java (taco-loco-backend/src/main/java/com/tacoloco/tacolocobackend/) 
 
