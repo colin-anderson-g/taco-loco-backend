@@ -19,7 +19,7 @@ I used Postman for testing, but curl can be used to make requests as well
 
 JSON inputs must be formatted as follows:
 
-'''
+```
 {
   
   "customerName": "Example Name",
@@ -27,7 +27,7 @@ JSON inputs must be formatted as follows:
   "customerAddress": "Example Address"
 
 }
-'''
+```
 
 A GET request will return all current deliveries as a JSON file with a customer name and address for each delivery.
 
