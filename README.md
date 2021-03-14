@@ -1,15 +1,25 @@
 Taco Loco Delivery Management Service
 
+Prerequisites:
+-package manager like homebrew or macports
+-Java 11
+
+Setup:
+brew install mvn
+mvn install in root dir
+mvn spring-boot:run
+
 This backend service can be started by running TacoLocoBackendApplication.java (taco-loco-backend/src/main/java/com/tacoloco/tacolocobackend/) 
 
 This will start an Apache Tomcat service on http://localhost::8080
 
 The following requests can be made to the URL http://localhost::8080/deliveries
 
-I used Postman to for testing, but curl can be used to make requests as well
+I used Postman for testing, but curl can be used to make requests as well
 
 JSON inputs must be formatted as follows:
 
+'''
 {
   
   "customerName": "Example Name",
@@ -17,6 +27,7 @@ JSON inputs must be formatted as follows:
   "customerAddress": "Example Address"
 
 }
+'''
 
 A GET request will return all current deliveries as a JSON file with a customer name and address for each delivery.
 
@@ -35,7 +46,7 @@ getAllDeliveries()  - Returns the list of all deliveries as JSON object. This fu
 
 addDelivery()       - Takes a Delivery object as input and adds the delivery to the list of all deliveries. This function is called from the POST endpoint.
 
-updateDelivery()    - Takes a Delivery object as input and first compares the delivery address to existing deliveries, if there is a match then the existing delivery is                        updated. If there is not a match for the delivery address then the customer name on the delivery is compared to each existing delivery and updates on a match. This function is called from the PUT endpoint.
+updateDelivery()    - Takes a Delivery object as input and first compares the delivery address to existing deliveries, if there is a match then the existing delivery is updated. If there is not a match for the delivery address then the customer name on the delivery is compared to each existing delivery and updates on a match. This function is called from the PUT endpoint.
 
 deleteDelivery()    - Takes a Delivery object and compares the customer name to existing deliveries and uses the ArrayList method removeIf() to remove deliveries that have matching customer names and/or matching addresses. The function is called from the DELETE endpoint.
 
