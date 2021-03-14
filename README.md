@@ -1,8 +1,12 @@
 Taco Loco Delivery Management Service
 
-This backend service can be started by running the TacoLocoBackendApplication.java file which starts an Apache Tomcat service on http://localhost::8080
+This backend service can be started by running TacoLocoBackendApplication.java (taco-loco-backend/src/main/java/com/tacoloco/tacolocobackend/) 
+
+This will start an Apache Tomcat service on http://localhost::8080
 
 The following requests can be made to the URL http://localhost::8080/deliveries
+
+I used Postman to for testing, but curl can be used to make requests as well
 
 JSON inputs must be formatted as follows:
 
